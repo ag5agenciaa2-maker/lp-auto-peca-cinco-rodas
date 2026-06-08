@@ -1458,7 +1458,7 @@ strong { color: var(--txt); }
 /* Seal */
 .about__seal {
   position: absolute;
-  top: -24px; right: -24px;
+  bottom: -20px; left: -20px;
   width: 120px; height: 120px;
   z-index: 2;
 }
