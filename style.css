@@ -1429,6 +1429,7 @@ strong { color: var(--txt); }
 /* ===== Visual (Left) ===== */
 .about__visual {
   position: relative;
+  margin-left: -80px;
 }
 .about__photo {
   position: relative;
