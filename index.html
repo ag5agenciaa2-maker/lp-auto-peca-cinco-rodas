@@ -447,82 +447,81 @@
 
 <!-- ============== SOBRE ============== -->
 <section class="about" id="sobre">
-  <div class="about__ambient" aria-hidden="true">
-    <div class="about__orb about__orb--1"></div>
-    <div class="about__orb about__orb--2"></div>
-    <div class="about__grid-lines"></div>
+  <div class="about__bg" aria-hidden="true">
+    <div class="about__glow about__glow--gold"></div>
+    <div class="about__glow about__glow--cyan"></div>
   </div>
 
-  <div class="about__grid">
-    <div class="about__copy">
+  <div class="about__wrap">
+    <header class="about__head">
       <span class="eyebrow"><i></i> SOBRE A 5 RODAS</span>
-      <h2>Uma das lojas mais antigas de Santa Cruz — e ainda a referência em <em>suspensão</em>.</h2>
-      <p class="about__lead">Trabalhamos com linhas nacionais e importadas desde 1975. Atendemos donos de carro e mecânicos de Santa Cruz, Campo Grande, Itaguaí e adjacências, com loja e oficina no mesmo endereço, atendimento direto com quem entende e entrega grátis para a região.</p>
+      <h2>Uma das lojas mais antigas de Santa Cruz — <em>a referência em suspensão</em>.</h2>
+    </header>
 
-      <div class="about__features">
-        <div class="about__feature">
-          <div class="about__feature-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div>
-            <strong>Garantia real</strong>
-            <span>Troca imediata em caso de defeito</span>
+    <div class="about__body">
+      <div class="about__visual">
+        <div class="about__photo">
+          <img src="Assets/fachada-cinco-rodas-panoramica.webp" alt="Fachada panorâmica da Auto Peças Cinco Rodas em Santa Cruz, Rio de Janeiro" loading="lazy" />
+          <div class="about__photo-vignette"></div>
+        </div>
+        <div class="about__seal">
+          <svg viewBox="0 0 140 140" class="about__seal-svg" aria-hidden="true">
+            <defs>
+              <path id="sealPath" d="M70,10 a60,60 0 1,1 0,120 a60,60 0 1,1 0,-120"/>
+            </defs>
+            <text class="about__seal-text">
+              <textPath href="#sealPath" startOffset="0%">
+                · DESDE 1975 · TRADIÇÃO EM SANTA CRUZ ·
+              </textPath>
+            </text>
+          </svg>
+          <div class="about__seal-core">
+            <span>50+</span>
+            <small>anos</small>
           </div>
         </div>
-        <div class="about__feature">
-          <div class="about__feature-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          </div>
-          <div>
-            <strong>Desde 1975</strong>
-            <span>+50 anos de experiência no ramo</span>
-          </div>
-        </div>
-        <div class="about__feature">
-          <div class="about__feature-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          </div>
-          <div>
-            <strong>Entrega grátis</strong>
-            <span>Na região de Santa Cruz e adjacências</span>
-          </div>
+        <div class="about__rating">
+          <div class="about__rating-stars">★★★★★</div>
+          <div class="about__rating-score">4.9</div>
+          <div class="about__rating-label">Google Reviews</div>
         </div>
       </div>
 
-      <div class="about__counters">
-        <div class="about__counter">
-          <b data-count="50" data-suffix="+">0</b>
-          <span>anos de oficina</span>
+      <div class="about__story">
+        <p class="about__story-lead">Desde 1975, a Cinco Rodas é sinônimo de confiança para quem precisa de peças e serviços automotivos na Zona Oeste do Rio.</p>
+        <p class="about__story-body">Atendemos donos de carro e mecânicos de Santa Cruz, Campo Grande, Itaguaí e região. Loja e oficina no mesmo endereço, com atendimento direto de quem entende do assunto. Linhas nacionais e importadas, entrega grátis e garantia real de troca.</p>
+
+        <div class="about__highlights">
+          <div class="about__highlight">
+            <div class="about__highlight-num" data-count="50" data-suffix="+">0</div>
+            <div class="about__highlight-label">Anos de<br>oficina</div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-num" data-count="2">0</div>
+            <div class="about__highlight-label">Unidades<br>ativas</div>
+          </div>
+          <div class="about__highlight">
+            <div class="about__highlight-num" data-count="15" data-suffix="K+">0</div>
+            <div class="about__highlight-label">Clientes<br>atendidos</div>
+          </div>
         </div>
-        <div class="about__counter about__counter--divider"></div>
-        <div class="about__counter">
-          <b data-count="2">0</b>
-          <span>unidades ativas</span>
-        </div>
-        <div class="about__counter about__counter--divider"></div>
-        <div class="about__counter">
-          <b data-count="15" data-suffix="K+">0</b>
-          <span>clientes atendidos</span>
+
+        <div class="about__pillars">
+          <div class="about__pillar">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Garantia real de troca</span>
+          </div>
+          <div class="about__pillar">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>Atendimento desde 1975</span>
+          </div>
+          <div class="about__pillar">
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Entrega grátis na região</span>
+          </div>
         </div>
       </div>
     </div>
-
-    <aside class="about__media" data-ph="interior">
-      <div class="about__media-frame">
-        <img src="Assets/fachada-cinco-rodas-panoramica.webp" alt="Fachada panorâmica da Auto Peças Cinco Rodas em Santa Cruz, Rio de Janeiro" loading="lazy" />
-        <div class="about__media-shine"></div>
-      </div>
-      <div class="about__badge">
-        <div class="about__badge-ring" aria-hidden="true"></div>
-        <span>desde</span>
-        <strong>1975</strong>
-        <span>tradição</span>
-      </div>
-      <div class="about__trust">
-        <div class="about__trust-stars">★★★★★</div>
-        <span>4.9 no Google</span>
-      </div>
-    </aside>
   </div>
 </section>
 
