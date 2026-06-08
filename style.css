@@ -1421,9 +1421,9 @@ strong { color: var(--txt); }
 /* ===== Body ===== */
 .about__body {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* ===== Visual (Left) ===== */
@@ -1434,7 +1434,8 @@ strong { color: var(--txt); }
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 4/5;
+  height: 100%;
+  min-height: 100%;
   box-shadow:
     0 60px 120px -40px rgba(0,0,0,0.6),
     0 0 0 1px rgba(255,255,255,0.04);
