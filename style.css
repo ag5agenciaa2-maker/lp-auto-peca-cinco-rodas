@@ -1443,7 +1443,7 @@ strong { color: var(--txt); }
 .about__photo img {
   width: 110%; height: 100%;
   object-fit: cover;
-  object-position: 65% center;
+  object-position: 72% center;
   display: block;
   transition: transform 10s cubic-bezier(.25,.46,.45,.94);
 }
