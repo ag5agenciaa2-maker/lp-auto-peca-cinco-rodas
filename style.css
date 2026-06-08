@@ -1429,7 +1429,6 @@ strong { color: var(--txt); }
 /* ===== Visual (Left) ===== */
 .about__visual {
   position: relative;
-  margin-right: -80px;
 }
 .about__photo {
   position: relative;
@@ -1444,6 +1443,7 @@ strong { color: var(--txt); }
 .about__photo img {
   width: 100%; height: 100%;
   object-fit: cover;
+  object-position: 75% center;
   display: block;
   transition: transform 10s cubic-bezier(.25,.46,.45,.94);
 }
