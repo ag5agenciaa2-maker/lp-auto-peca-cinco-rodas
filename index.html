@@ -447,22 +447,80 @@
 
 <!-- ============== SOBRE ============== -->
 <section class="about" id="sobre">
+  <div class="about__ambient" aria-hidden="true">
+    <div class="about__orb about__orb--1"></div>
+    <div class="about__orb about__orb--2"></div>
+    <div class="about__grid-lines"></div>
+  </div>
+
   <div class="about__grid">
     <div class="about__copy">
       <span class="eyebrow"><i></i> SOBRE A 5 RODAS</span>
       <h2>Uma das lojas mais antigas de Santa Cruz — e ainda a referência em <em>suspensão</em>.</h2>
-      <p>Trabalhamos com linhas nacionais e importadas desde 1975. Atendemos donos de carro e mecânicos de Santa Cruz, Campo Grande, Itaguaí e adjacências, com loja e oficina no mesmo endereço, atendimento direto com quem entende e entrega grátis para a região.</p>
+      <p class="about__lead">Trabalhamos com linhas nacionais e importadas desde 1975. Atendemos donos de carro e mecânicos de Santa Cruz, Campo Grande, Itaguaí e adjacências, com loja e oficina no mesmo endereço, atendimento direto com quem entende e entrega grátis para a região.</p>
+
+      <div class="about__features">
+        <div class="about__feature">
+          <div class="about__feature-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <strong>Garantia real</strong>
+            <span>Troca imediata em caso de defeito</span>
+          </div>
+        </div>
+        <div class="about__feature">
+          <div class="about__feature-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div>
+            <strong>Desde 1975</strong>
+            <span>+50 anos de experiência no ramo</span>
+          </div>
+        </div>
+        <div class="about__feature">
+          <div class="about__feature-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          </div>
+          <div>
+            <strong>Entrega grátis</strong>
+            <span>Na região de Santa Cruz e adjacências</span>
+          </div>
+        </div>
+      </div>
+
       <div class="about__counters">
-        <div><b data-count="50" data-suffix=" anos">0</b><span>de oficina</span></div>
-        <div><b data-count="2">0</b><span>unidades (Santa Cruz · Sepetiba)</span></div>
+        <div class="about__counter">
+          <b data-count="50" data-suffix="+">0</b>
+          <span>anos de oficina</span>
+        </div>
+        <div class="about__counter about__counter--divider"></div>
+        <div class="about__counter">
+          <b data-count="2">0</b>
+          <span>unidades ativas</span>
+        </div>
+        <div class="about__counter about__counter--divider"></div>
+        <div class="about__counter">
+          <b data-count="15" data-suffix="K+">0</b>
+          <span>clientes atendidos</span>
+        </div>
       </div>
     </div>
+
     <aside class="about__media" data-ph="interior">
-      <img src="Assets/fachada-cinco-rodas-panoramica.webp" alt="Fachada panorâmica da Auto Peças Cinco Rodas em Santa Cruz, Rio de Janeiro" loading="lazy" />
+      <div class="about__media-frame">
+        <img src="Assets/fachada-cinco-rodas-panoramica.webp" alt="Fachada panorâmica da Auto Peças Cinco Rodas em Santa Cruz, Rio de Janeiro" loading="lazy" />
+        <div class="about__media-shine"></div>
+      </div>
       <div class="about__badge">
+        <div class="about__badge-ring" aria-hidden="true"></div>
         <span>desde</span>
         <strong>1975</strong>
         <span>tradição</span>
+      </div>
+      <div class="about__trust">
+        <div class="about__trust-stars">★★★★★</div>
+        <span>4.9 no Google</span>
       </div>
     </aside>
   </div>
