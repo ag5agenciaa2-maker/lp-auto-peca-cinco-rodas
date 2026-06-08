@@ -1421,7 +1421,7 @@ strong { color: var(--txt); }
 /* ===== Body ===== */
 .about__body {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   align-items: stretch;
 }
