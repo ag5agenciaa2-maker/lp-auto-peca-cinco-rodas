@@ -3473,6 +3473,7 @@ strong { color: var(--txt); }
     height: 42px;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
     background: rgba(10, 14, 20, 0.65);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -3717,7 +3718,59 @@ strong { color: var(--txt); }
 
   .service { padding: 32px 22px; gap: 18px; }
 
-  .videos__grid { grid-template-columns: 1fr; }
+  .videos__grid { grid-template-columns: 1fr; gap: 32px; align-items: center; justify-items: center; }
+  .vcard { 
+    gap: 10px; 
+    background: rgba(255,255,255,0.02); 
+    border: 1px solid var(--line); 
+    border-radius: var(--rad-lg); 
+    padding: 12px 12px 16px; 
+    width: auto; 
+    display: inline-flex; 
+  }
+  .vcard__thumb { 
+    aspect-ratio: 9 / 16; 
+    border-radius: 16px; 
+    max-height: 600px; 
+    width: auto; 
+    max-width: 338px; 
+    margin: 0 auto; 
+    transform: none !important; 
+  }
+  .vcard:hover .vcard__thumb { 
+    transform: none !important; 
+    border-color: rgba(255, 255, 255, 0.04); 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
+  }
+  .vcard video { 
+    aspect-ratio: 9 / 16; 
+    object-fit: cover; 
+  }
+  .vcard h4 { 
+    font-size: 0.95rem; 
+    padding: 0 4px; 
+    margin-top: 4px; 
+  }
+  .vcard__meta { 
+    font-size: 9px; 
+    padding: 0 4px; 
+    color: var(--mut); 
+  }
+  .vcard__tag { 
+    font-size: 8px; 
+    padding: 5px 10px; 
+    top: 12px; 
+    left: 12px; 
+  }
+  .vcard__controls { 
+    bottom: 12px; 
+    padding: 6px 12px; 
+    gap: 8px; 
+  }
+  .vctrl-btn { 
+    width: 32px; 
+    height: 32px; 
+  }
 
   .bento__head { margin-bottom: 40px; }
 
@@ -3745,35 +3798,54 @@ strong { color: var(--txt); }
   .cta__bullets { grid-template-columns: 1fr; }
   .cta__form { padding: 24px; }
 
-  .loc { padding: 80px 20px; }
-  .loc__head { margin-bottom: 36px; }
-  .loc__head h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
-  .loc__card-header { padding: 24px 22px 0; }
-  .loc__map-wrap { margin: 20px 22px 0; min-height: 160px; }
-  .loc__map-wrap iframe { height: 160px; }
-  .loc__info { padding: 18px 22px; gap: 14px; }
-  .loc__actions { padding: 0 22px 22px; }
-  .loc { padding: 80px 20px; }
-  .loc__head { margin-bottom: 36px; }
-  .loc__head h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
-  .loc__map-wrap { border-radius: 16px; }
-  .loc__map-wrap iframe { height: 300px; }
+  .loc { padding: 60px 16px; }
+  .loc__head { margin-bottom: 28px; }
+  .loc__head h2 { font-size: clamp(1.4rem, 5.5vw, 1.8rem); }
+  .loc__head > p { font-size: 0.92rem; margin-top: 10px; }
+  .loc__stage { border-radius: 20px; overflow: hidden; }
+  .loc__map-wrap { border-radius: 20px; margin: 0; }
+  .loc__map-wrap iframe { height: 240px; display: block; }
   .loc__float {
-    margin-top: -40px;
-    padding: 0 16px;
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .loc__float-inner {
-    padding: 24px;
-    border-radius: 16px;
+    padding: 20px;
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(180deg, rgba(16,24,38,0.9) 0%, rgba(10,14,20,0.95) 100%);
+    box-shadow: none;
   }
+  .loc__float-inner::before { display: none; }
+  .loc__float-label {
+    font-size: 0.7rem;
+    margin-bottom: 16px;
+  }
+  .loc__float-address { gap: 10px; margin-bottom: 16px; }
+  .loc__float-address svg { width: 18px; height: 18px; }
   .loc__float-address strong { font-size: 1rem; }
+  .loc__float-address span { font-size: 0.85rem; }
+  .loc__float-divider { margin: 0 0 14px; }
+  .loc__float-row { gap: 10px; margin-bottom: 12px; }
+  .loc__float-row svg { width: 14px; height: 14px; }
+  .loc__float-row strong { font-size: 0.8rem; }
+  .loc__float-row span,
+  .loc__float-row a { font-size: 0.85rem; }
+  .loc__float-btn { margin-top: 16px; padding: 12px 18px; font-size: 0.9rem; }
   .loc__footer {
     flex-direction: column;
-    gap: 12px;
-    margin-top: 28px;
+    gap: 10px;
+    margin-top: 24px;
   }
-  .loc__footer-line { max-width: 80px; }
-  .loc__footer p { white-space: normal; text-align: center; }
+  .loc__footer-line { max-width: 60px; }
+  .loc__footer p { white-space: normal; text-align: center; font-size: 0.82rem; }
 
   /* Ajuste de espaçamento móvel Oficina em Ação */
   .experience {
