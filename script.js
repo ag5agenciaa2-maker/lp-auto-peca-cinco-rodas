@@ -16,9 +16,15 @@
   const drawerOverlay = document.getElementById('drawerOverlay');
   const drawerClose = document.getElementById('drawerClose');
 
+  /* PageSpeed fix: rAF batching evita forced reflow */
+  let rafPending = false;
   const onScroll = () => {
-    if (!nav) return;
-    nav.classList.toggle('is-stuck', window.scrollY > 50);
+    if (!nav || rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => {
+      rafPending = false;
+      nav.classList.toggle('is-stuck', window.scrollY > 50);
+    });
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
@@ -30,7 +36,7 @@
     drawer.setAttribute('aria-hidden', 'false');
     drawerOverlay.setAttribute('aria-hidden', 'false');
     if (burger) burger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll');
   };
 
   const closeDrawer = () => {
@@ -40,7 +46,7 @@
     drawer.setAttribute('aria-hidden', 'true');
     drawerOverlay.setAttribute('aria-hidden', 'true');
     if (burger) burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    document.body.classList.remove('no-scroll');
   };
 
   if (burger) {
@@ -74,10 +80,10 @@
     '.cta__copy', '.cta__form',
     '.foot__grid > *'
   ];
+  /* PageSpeed fix: stagger via dataset em vez de style inline (evita forced reflow) */
   document.querySelectorAll(revealSelectors.join(',')).forEach((el, i) => {
     el.classList.add('reveal');
-    // stagger by index within parent for grids
-    el.style.transitionDelay = ((i % 8) * 60) + 'ms';
+    el.dataset.delay = ((i % 8) * 60);
   });
 
   const io = new IntersectionObserver(entries => {
@@ -523,7 +529,7 @@
           vpopupVideo.muted = false; // Abre com som!
           vpopupVideo.setAttribute('controls', 'true'); // Controles habilitados no popup de luxo
           vpopup.hidden = false;
-          document.body.style.overflow = 'hidden'; // Trava o scroll da página
+          document.body.classList.add('no-scroll'); // Trava o scroll da página
 
           // Carrega e toca no popup
           vpopupVideo.load();
@@ -539,7 +545,7 @@
         vpopupVideo.src = ''; // Limpa memória
         vpopup.hidden = true;
         vpopup.classList.remove('is-horizontal'); // Reseta a classe de orientação
-        document.body.style.overflow = ''; // Destrava o scroll
+        document.body.classList.remove('no-scroll'); // Destrava o scroll
 
         // Retoma o vídeo pequeno se o mouse ainda estiver sobre o card dele
         if (activeCardVideo) {
