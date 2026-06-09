@@ -274,6 +274,23 @@
   const ok   = document.getElementById('ctaSuccess');
   const WHATSAPP_NUMBER = '5521970368167';
 
+  // Máscara de telefone com DDD — formato (XX) XXXXX-XXXX
+  const telInput = document.getElementById('telInput');
+  if (telInput) {
+    telInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      if (v.length > 7) {
+        v = '(' + v.slice(0, 2) + ') ' + v.slice(2, 7) + '-' + v.slice(7);
+      } else if (v.length > 2) {
+        v = '(' + v.slice(0, 2) + ') ' + v.slice(2);
+      } else if (v.length > 0) {
+        v = '(' + v;
+      }
+      e.target.value = v;
+    });
+  }
+
   if (form) {
     const validate = (input) => {
       const label = input.closest('label');
@@ -328,9 +345,9 @@
       let text = `Olá, me chamo ${nome}, vim através do site e gostaria de uma informação.`;
       text += `\n\n- E-mail: ${email}`;
       text += `\n- Telefone: ${tel}`;
-      text += `\n- Assunto: ${assunto}`;
+      text += `\n- Serviço: ${assunto}`;
       if (msg) {
-        text += `\n- Mensagem: ${msg}`;
+        text += `\n- Situação: ${msg}`;
       }
 
       const url = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
@@ -786,6 +803,9 @@
   initScrollPlay();
   initHeroWheelsParallax();
   initHeroParticles();
+
+  // Placeholder para futuras interações do grid bento
+  const initBentoPremium = () => {};
   initBentoPremium();
 
 })();
