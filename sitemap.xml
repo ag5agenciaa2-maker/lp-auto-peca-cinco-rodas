@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <url>
+    <loc>https://www.autopecascincorodas.com.br/</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.autopecascincorodas.com.br/Assets/fachada-cinco-rodas-panoramica.webp</image:loc>
+      <image:title>Fachada panorâmica Auto Peças Cinco Rodas - Santa Cruz RJ</image:title>
+      <image:caption>Fachada da loja de auto peças e oficina mecânica Cinco Rodas em Santa Cruz, Rio de Janeiro</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.autopecascincorodas.com.br/Assets/logo-desktop-cinco-rodas.webp</image:loc>
+      <image:title>Logo Auto Peças Cinco Rodas</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.autopecascincorodas.com.br/politica-de-privacidade.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.autopecascincorodas.com.br/termos-e-condicoes.html</loc>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
