@@ -380,43 +380,88 @@
     });
   });
 
-  // ---------- WhatsApp Premium Experience (AG5 Ultra-Premium) ----------
+  // ---------- WhatsApp Premium Experience (AG5 V4 — gatilho por viewport) ----------
   const initWaPremium = () => {
-    const bubble = document.getElementById('wa-message-bubble');
-    const typing = document.getElementById('wa-typing');
-    const realMessage = document.getElementById('wa-real-message');
-    const badge = document.getElementById('wa-notification');
-    const closeBtn = document.getElementById('wa-close-btn');
-    const mainBtn = document.getElementById('wa-main-btn');
+    // Mecânica/oficina = nicho TRANQUILO (não regulado) → badge habilitado
+    const MODO_COMPLIANCE = false;
 
-    if (!bubble || !typing || !realMessage || !badge || !closeBtn || !mainBtn) return;
+    const bubble        = document.getElementById('wa-message-bubble');
+    const typing        = document.getElementById('wa-typing');
+    const realMessage   = document.getElementById('wa-real-message');
+    const badge         = document.getElementById('wa-notification');
+    const closeBtn      = document.getElementById('wa-close-btn');
+    const mainBtn       = document.getElementById('wa-main-btn');
+    const targetSection = document.getElementById('servicos'); // 3ª seção (hero → impacto → serviços)
 
-    // 1. Exibir o balão após um atraso realista de 6 segundos
-    setTimeout(() => {
-      bubble.classList.add('show');
-      
-      // 2. Exibir animação de digitação de 3 pontos piscantes por 2.5s antes de revelar a mensagem final
-      setTimeout(() => {
-        typing.style.display = 'none';
-        realMessage.style.display = 'block';
-      }, 2500);
-    }, 6000);
+    if (!bubble || !typing || !realMessage || !closeBtn || !mainBtn || !targetSection) return;
 
-    // Fechar balão e ativar badge de notificação de engajamento
+    const DELAY_BALAO            = 25000; // 25s após entrar na seção
+    const DURATION_TYPING        = 2500;  // 2.5s de "digitando..."
+    const DURATION_BALAO_VISIVEL = 15000; // 15s exibido depois de aparecer
+    const DELAY_BADGE_APOS_SUMIR = 5000;  // 5s após sumir → badge
+
+    let triggered = false;
+    let autoHideTimer = null;
+    let badgeTimer = null;
+    let userClosed = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
+
+          // Botão flutuante aparece imediatamente
+          mainBtn.classList.add('visible');
+
+          // t=25s → balão sobe
+          setTimeout(() => {
+            if (userClosed) return;
+            bubble.classList.add('show');
+
+            // 2.5s de "digitando..." → mensagem real (classes utilitárias, sem inline style)
+            setTimeout(() => {
+              if (userClosed) return;
+              typing.classList.add('is-hidden');
+              realMessage.classList.add('is-visible');
+              requestAnimationFrame(() => realMessage.classList.add('is-in'));
+            }, DURATION_TYPING);
+
+            // t=40s → balão some automaticamente
+            autoHideTimer = setTimeout(() => {
+              if (userClosed) return;
+              bubble.classList.remove('show');
+
+              // t=45s → badge "1" aparece (só se NÃO for Compliance)
+              if (!MODO_COMPLIANCE && badge) {
+                badgeTimer = setTimeout(() => {
+                  if (userClosed) return;
+                  badge.classList.add('show');
+                }, DELAY_BADGE_APOS_SUMIR);
+              }
+            }, DURATION_BALAO_VISIVEL);
+          }, DELAY_BALAO);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(targetSection);
+
     closeBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      userClosed = true;
       bubble.classList.remove('show');
-      
-      // Surge uma notificação na badge do botão flutuante após 2 segundos do fechamento
-      setTimeout(() => {
-        badge.classList.add('show');
-      }, 2000);
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      if (badgeTimer) clearTimeout(badgeTimer);
+      if (!MODO_COMPLIANCE && badge) {
+        setTimeout(() => { badge.classList.add('show'); }, DELAY_BADGE_APOS_SUMIR);
+      }
     });
 
-    // Ao interagir com o botão flutuante principal do WhatsApp, encerra o balão e a badge
     mainBtn.addEventListener('click', () => {
       bubble.classList.remove('show');
-      badge.classList.remove('show');
+      if (badge) badge.classList.remove('show');
+      if (autoHideTimer) clearTimeout(autoHideTimer);
+      if (badgeTimer) clearTimeout(badgeTimer);
     });
   };
 
@@ -718,97 +763,12 @@
     animateWheels();
   };
 
-  // ---------- partículas faísca douradas flutuando na hero ----------
-  const initHeroParticles = () => {
-    const hero = document.getElementById('hero');
-    if (!hero) return;
-
-    // Cria o canvas de partículas
-    const canvas = document.createElement('canvas');
-    canvas.id = 'hero-particles-canvas';
-    canvas.setAttribute('aria-hidden', 'true');
-    canvas.style.cssText = [
-      'position:absolute',
-      'inset:0',
-      'width:100%',
-      'height:100%',
-      'pointer-events:none',
-      'z-index:1',
-    ].join(';');
-    hero.insertBefore(canvas, hero.firstChild);
-
-    const ctx  = canvas.getContext('2d');
-    const COUNT = 38; // número de partículas
-    let W, H;
-
-    const resize = () => {
-      W = canvas.width  = hero.offsetWidth;
-      H = canvas.height = hero.offsetHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize, { passive: true });
-
-    // Gera partículas com propriedades aleatórias
-    const particles = Array.from({ length: COUNT }, () => ({
-      x:     Math.random() * (W || 1400),
-      y:     Math.random() * (H || 700),
-      r:     Math.random() * 1.6 + 0.4,       // raio: 0.4 - 2px
-      vx:    (Math.random() - 0.5) * 0.28,    // velocidade horizontal lenta
-      vy:    -(Math.random() * 0.45 + 0.1),   // sobe suavemente
-      alpha: Math.random() * 0.4 + 0.1,       // opacidade: 0.1 - 0.5
-      pulse: Math.random() * Math.PI * 2,     // fase de pulsação aleatória
-      color: Math.random() > 0.75 ? '#38D5E0' : '#FFD200', // 25% azul, 75% dourado
-    }));
-
-    const draw = (time) => {
-      ctx.clearRect(0, 0, W, H);
-
-      particles.forEach(p => {
-        // Pulsação de brilho senoidal
-        const pulse = Math.sin(time * 0.001 + p.pulse) * 0.5 + 0.5;
-        const alpha = p.alpha * (0.5 + pulse * 0.5);
-        const radius = p.r * (0.8 + pulse * 0.4);
-
-        // Gradiente radial (glow ao redor da partícula)
-        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius * 6);
-        grad.addColorStop(0, p.color + 'ff');
-        grad.addColorStop(0.4, p.color + '88');
-        grad.addColorStop(1,   p.color + '00');
-
-        ctx.save();
-        ctx.globalAlpha = alpha;
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, radius * 6, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.restore();
-
-        // Move a partícula
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Reposiciona quando sai do topo ou das bordas
-        if (p.y < -10) {
-          p.y = H + 10;
-          p.x = Math.random() * W;
-        }
-        if (p.x < -10) p.x = W + 10;
-        if (p.x > W + 10) p.x = -10;
-      });
-
-      requestAnimationFrame(draw);
-    };
-
-    requestAnimationFrame(draw);
-  };
-
   initWaPremium();
   initNavSpotlight();
   initVideosGallery();
   init3DTiltPlayer();
   initScrollPlay();
   initHeroWheelsParallax();
-  initHeroParticles();
 
   // Placeholder para futuras interações do grid bento
   const initBentoPremium = () => {};

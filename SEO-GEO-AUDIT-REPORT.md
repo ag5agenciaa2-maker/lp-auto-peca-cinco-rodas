@@ -53,7 +53,7 @@ A landing page da Auto Peças Cinco Rodas recebeu uma otimização completa de S
    - Coordenadas geográficas
    - Horário de funcionamento
    - Catálogo de serviços (6 serviços)
-   - AggregateRating (4.9/5, 150 avaliações)
+   - AggregateRating (4.3/5, 499 avaliações — dado real do Google Business Profile)
    - Reviews estruturadas
    - Redes sociais (Instagram, Facebook, TikTok)
 
