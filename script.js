@@ -74,7 +74,7 @@
     '.bento__cell',
     '.vcard',
     '.about__copy', '.about__media',
-    '.reviews__head', '.quote', '.carousel__controls',
+    '.reviews__head', '.reviews__marquee-container',
     '.faq__header', '.faq__item',
     '.loc__copy', '.loc__map',
     '.cta__copy', '.cta__form',
@@ -124,87 +124,7 @@
 
   counters.forEach(c => countObserver.observe(c));
 
-  // ---------- reviews carousel (ultra-premium grid) ----------
-  const reviewsGrid = document.getElementById('reviewsGrid');
-  const reviewsDots = document.getElementById('reviewsDots');
-  const reviewsPrev = document.getElementById('reviewsPrev');
-  const reviewsNext = document.getElementById('reviewsNext');
-
-  if (reviewsGrid && reviewsDots) {
-    const allQuotes = Array.from(reviewsGrid.querySelectorAll('.quote'));
-    const totalQuotes = allQuotes.length;
-    let currentPage = 0;
-    let reviewsTimer = null;
-
-    // Determina quantos cards mostrar por página conforme largura
-    const getPerPage = () => window.innerWidth <= 1024 ? (window.innerWidth <= 640 ? 1 : 2) : 3;
-    let perPage = getPerPage();
-    let totalPages = Math.ceil(totalQuotes / perPage);
-
-    // Cria dots
-    const buildDots = () => {
-      reviewsDots.innerHTML = '';
-      for (let i = 0; i < totalPages; i++) {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', 'Página ' + (i + 1) + ' de avaliações');
-        b.addEventListener('click', () => goToPage(i, true));
-        reviewsDots.appendChild(b);
-      }
-    };
-    buildDots();
-
-    const render = () => {
-      const dots = Array.from(reviewsDots.children);
-      dots.forEach((d, i) => d.classList.toggle('is-active', i === currentPage));
-
-      // Mostra/esconde cards com transição suave
-      allQuotes.forEach((q, i) => {
-        const start = currentPage * perPage;
-        const end = start + perPage;
-        const visible = i >= start && i < end;
-        q.style.display = visible ? '' : 'none';
-        q.style.opacity = visible ? '1' : '0';
-        q.style.transform = visible ? 'translateY(0)' : 'translateY(12px)';
-      });
-    };
-
-    const goToPage = (page, user) => {
-      currentPage = (page + totalPages) % totalPages;
-      render();
-      if (user) restartReviews();
-    };
-
-    if (reviewsPrev) {
-      reviewsPrev.addEventListener('click', () => goToPage(currentPage - 1, true));
-    }
-    if (reviewsNext) {
-      reviewsNext.addEventListener('click', () => goToPage(currentPage + 1, true));
-    }
-
-    const startReviews = () => { reviewsTimer = setInterval(() => goToPage(currentPage + 1), 8000); };
-    const stopReviews  = () => { if (reviewsTimer) clearInterval(reviewsTimer); };
-    const restartReviews = () => { stopReviews(); startReviews(); };
-
-    reviewsGrid.addEventListener('mouseenter', stopReviews);
-    reviewsGrid.addEventListener('mouseleave', startReviews);
-
-    // Recalcula em resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        perPage = getPerPage();
-        totalPages = Math.ceil(totalQuotes / perPage);
-        currentPage = Math.min(currentPage, totalPages - 1);
-        buildDots();
-        render();
-      }, 250);
-    });
-
-    render();
-    startReviews();
-  }
+  // ---------- reviews carousel (moved to infinite CSS marquee) ----------
 
   // ---------- FAQ accordion ultra-premium ----------
   const faqItems = document.querySelectorAll('.faq__item');

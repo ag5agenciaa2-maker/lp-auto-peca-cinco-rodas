@@ -228,15 +228,20 @@
 <!-- ============== IMPACTO ============== -->
 <section class="impact" id="impacto">
   <div class="impact__grid">
-    <div class="impact__copy">
-      <span class="eyebrow"><i></i> DOR &amp; SOLUÇÃO</span>
-      <h2>Aquele barulho na suspensão que <em>já passou em três oficinas</em>? Pode trazer.</h2>
-      <p>50 anos resolvendo o que outros não conseguiram — de Gol a importado de luxo. Diagnóstico honesto, peça certa, na sua mão (ou no seu carro) no mesmo dia.</p>
+    <div class="impact__image-container">
+      <img src="Assets/dor-solucao-suspensao-limpa.png" alt="Comparação visual da suspensão danificada e suspensão nova restaurada" class="impact__image" loading="lazy" width="600" height="600" />
     </div>
-    <div class="impact__list">
-      <div class="impact__item"><span>01</span><div><strong>Diagnóstico claro</strong><p>Você ouve, vê e entende o problema antes de aprovar o serviço.</p></div></div>
-      <div class="impact__item"><span>02</span><div><strong>Peça na hora</strong><p>Estoque próprio de nacionais e importados — sem ficar esperando dias.</p></div></div>
-      <div class="impact__item"><span>03</span><div><strong>Orçamento transparente</strong><p>Nota detalhada com peças e serviços. Parcelamento em até 10x sem juros.</p></div></div>
+    <div class="impact__content">
+      <div class="impact__copy">
+        <span class="eyebrow"><i></i> DIAGNÓSTICO E PRECISÃO</span>
+        <h2>Aquele barulho na suspensão que <em>já passou em três oficinas</em>? Pode trazer.</h2>
+        <p>50 anos resolvendo o que outros não conseguiram — de Gol a importado de luxo. Diagnóstico honesto, peça certa, na sua mão (ou no seu carro) no mesmo dia.</p>
+      </div>
+      <div class="impact__list">
+        <div class="impact__item"><span>01</span><div><strong>Diagnóstico claro</strong><p>Você ouve, vê e entende o problema antes de aprovar o serviço.</p></div></div>
+        <div class="impact__item"><span>02</span><div><strong>Peça na hora</strong><p>Estoque próprio de nacionais e importados — sem ficar esperando dias.</p></div></div>
+        <div class="impact__item"><span>03</span><div><strong>Orçamento transparente</strong><p>Nota detalhada com peças e serviços. Parcelamento em até 10x sem juros.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -334,7 +339,15 @@
 <section class="reviews" id="avaliacoes">
   <header class="reviews__head">
     <div>
-      <span class="eyebrow"><i></i> Avaliações Google</span>
+      <span class="eyebrow">
+        <svg viewBox="0 0 24 24" width="16" height="16" style="vertical-align: middle; margin-right: 6px; display: inline-block;">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+        </svg>
+        Avaliações Google
+      </span>
       <h2>O que os clientes dizem <em>sobre a gente</em>.</h2>
     </div>
     <a class="btn btn--ghost" href="https://search.google.com/local/writereview?placeid=ChIJBVsZRV_6mwAR_dWXovN74ak" target="_blank" rel="noopener noreferrer">
@@ -343,108 +356,202 @@
     </a>
   </header>
 
-  <div class="reviews__grid" id="reviewsGrid">
-    <article class="quote">
-      <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p>Atendimento muito bom. Fui atendido pelo mecânico Leandro e ele solucionou um problema da bóia de nível do meu carro que ninguém estava conseguindo resolver. Já estive outras vezes na loja e sempre fui muito bem atendido.</p>
-      <footer>
-        <div class="quote__avatar">TR</div>
-        <div class="quote__author">
-          <strong>Thiago Ramos</strong>
-          <time datetime="2026-06-04">4 dias atrás</time>
-        </div>
-        <span class="quote__verified">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Verificado
-        </span>
-      </footer>
-    </article>
+  <div class="reviews__marquee-container">
+    <div class="reviews__marquee-track" id="reviewsMarquee">
+      <!-- Grupo 1 -->
+      <article class="quote">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Atendimento muito bom. Fui atendido pelo mecânico Leandro e ele solucionou um problema da bóia de nível do meu carro que ninguém estava conseguindo resolver. Já estive outras vezes na loja e sempre fui muito bem atendido.</p>
+        <footer>
+          <div class="quote__avatar">TR</div>
+          <div class="quote__author">
+            <strong>Thiago Ramos</strong>
+            <time datetime="2026-06-04">4 dias atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
 
-    <article class="quote">
-      <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p>Estive na oficina 5 rodas com a minha Renault Scenic 1.6 16v 2002 e fui muito bem atendido pelo mecânico Wellington. Ouviu o barulho e já disse o que era. Orçamento transparente, serviço impecável, 7x sem juros. Atendimento nota 10.</p>
-      <footer>
-        <div class="quote__avatar">LF</div>
-        <div class="quote__author">
-          <strong>L. Figueredo</strong>
-          <time datetime="2025-06-08">1 ano atrás</time>
-        </div>
-        <span class="quote__verified">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Verificado
-        </span>
-      </footer>
-    </article>
+      <article class="quote">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Estive na oficina 5 rodas com a minha Renault Scenic 1.6 16v 2002 e fui muito bem atendido pelo mecânico Wellington. Ouviu o barulho e já disse o que era. Orçamento transparente, serviço impecável, 7x sem juros. Atendimento nota 10.</p>
+        <footer>
+          <div class="quote__avatar">LF</div>
+          <div class="quote__author">
+            <strong>L. Figueredo</strong>
+            <time datetime="2025-06-08">1 ano atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
 
-    <article class="quote">
-      <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p>Fui hoje na loja, atendimento MARAVILHOSO! Serviço de qualidade. Agradeço ao profissional Altair que é uma pessoa e profissional 200%. Muito obrigado!</p>
-      <footer>
-        <div class="quote__avatar">SA</div>
-        <div class="quote__author">
-          <strong>Sergio Avellar</strong>
-          <time datetime="2026-05-08">1 mês atrás</time>
-        </div>
-        <span class="quote__verified">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Verificado
-        </span>
-      </footer>
-    </article>
+      <article class="quote">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Fui hoje na loja, atendimento MARAVILHOSO! Serviço de qualidade. Agradeço ao profissional Altair que é uma pessoa e profissional 200%. Muito obrigado!</p>
+        <footer>
+          <div class="quote__avatar">SA</div>
+          <div class="quote__author">
+            <strong>Sergio Avellar</strong>
+            <time datetime="2026-05-08">1 mês atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
 
-    <article class="quote">
-      <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p>Excelente serviço do mecânico Leandro. Eficiente, atencioso e muito educado.</p>
-      <footer>
-        <div class="quote__avatar">AG</div>
-        <div class="quote__author">
-          <strong>André Grassano</strong>
-          <time datetime="2026-06-04">4 dias atrás</time>
-        </div>
-        <span class="quote__verified">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Verificado
-        </span>
-      </footer>
-    </article>
+      <article class="quote">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Excelente serviço do mecânico Leandro. Eficiente, atencioso e muito educado.</p>
+        <footer>
+          <div class="quote__avatar">AG</div>
+          <div class="quote__author">
+            <strong>André Grassano</strong>
+            <time datetime="2026-06-04">4 dias atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
 
-    <article class="quote">
-      <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p>Em Santa Cruz é uma ótima loja de auto peças e com preços muito competitivos.</p>
-      <footer>
-        <div class="quote__avatar">FM</div>
-        <div class="quote__author">
-          <strong>Flavio Morais</strong>
-          <time datetime="2025-08-08">Local Guide · 10 meses atrás</time>
-        </div>
-        <span class="quote__verified">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Verificado
-        </span>
-      </footer>
-    </article>
+      <article class="quote">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Em Santa Cruz é uma ótima loja de auto peças e com preços muito competitivos.</p>
+        <footer>
+          <div class="quote__avatar">FM</div>
+          <div class="quote__author">
+            <strong>Flavio Morais</strong>
+            <time datetime="2025-08-08">Local Guide · 10 meses atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
 
-    <article class="quote">
-      <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p>Peças de todos os tipos de carro, originais e segunda linha. Ótimo atendimento, preços acessíveis, produtos de qualidade.</p>
-      <footer>
-        <div class="quote__avatar">RM</div>
-        <div class="quote__author">
-          <strong>Rafael Marques</strong>
-          <time datetime="2022-06-08">4 anos atrás</time>
-        </div>
-        <span class="quote__verified">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          Verificado
-        </span>
-      </footer>
-    </article>
-  </div>
+      <article class="quote">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Peças de todos os tipos de carro, originais e segunda linha. Ótimo atendimento, preços acessíveis, produtos de qualidade.</p>
+        <footer>
+          <div class="quote__avatar">RM</div>
+          <div class="quote__author">
+            <strong>Rafael Marques</strong>
+            <time datetime="2022-06-08">4 anos atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
 
-  <div class="carousel__controls">
-    <button class="carousel__btn" id="reviewsPrev" aria-label="Anterior"><span>←</span></button>
-    <div class="carousel__dots" id="reviewsDots"></div>
-    <button class="carousel__btn" id="reviewsNext" aria-label="Próximo"><span>→</span></button>
+      <!-- Grupo 2 (Duplicados para efeito de loop infinito suave) -->
+      <article class="quote" aria-hidden="true">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Atendimento muito bom. Fui atendido pelo mecânico Leandro e ele solucionou um problema da bóia de nível do meu carro que ninguém estava conseguindo resolver. Já estive outras vezes na loja e sempre fui muito bem atendido.</p>
+        <footer>
+          <div class="quote__avatar">TR</div>
+          <div class="quote__author">
+            <strong>Thiago Ramos</strong>
+            <time datetime="2026-06-04">4 dias atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
+
+      <article class="quote" aria-hidden="true">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Estive na oficina 5 rodas com a minha Renault Scenic 1.6 16v 2002 e fui muito bem atendido pelo mecânico Wellington. Ouviu o barulho e já disse o que era. Orçamento transparente, serviço impecável, 7x sem juros. Atendimento nota 10.</p>
+        <footer>
+          <div class="quote__avatar">LF</div>
+          <div class="quote__author">
+            <strong>L. Figueredo</strong>
+            <time datetime="2025-06-08">1 ano atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
+
+      <article class="quote" aria-hidden="true">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Fui hoje na loja, atendimento MARAVILHOSO! Serviço de qualidade. Agradeço ao profissional Altair que é uma pessoa e profissional 200%. Muito obrigado!</p>
+        <footer>
+          <div class="quote__avatar">SA</div>
+          <div class="quote__author">
+            <strong>Sergio Avellar</strong>
+            <time datetime="2026-05-08">1 mês atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
+
+      <article class="quote" aria-hidden="true">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Excelente serviço do mecânico Leandro. Eficiente, atencioso e muito educado.</p>
+        <footer>
+          <div class="quote__avatar">AG</div>
+          <div class="quote__author">
+            <strong>André Grassano</strong>
+            <time datetime="2026-06-04">4 dias atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
+
+      <article class="quote" aria-hidden="true">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Em Santa Cruz é uma ótima loja de auto peças e com preços muito competitivos.</p>
+        <footer>
+          <div class="quote__avatar">FM</div>
+          <div class="quote__author">
+            <strong>Flavio Morais</strong>
+            <time datetime="2025-08-08">Local Guide · 10 meses atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
+
+      <article class="quote" aria-hidden="true">
+        <div class="quote__stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p>Peças de todos os tipos de carro, originais e segunda linha. Ótimo atendimento, preços acessíveis, produtos de qualidade.</p>
+        <footer>
+          <div class="quote__avatar">RM</div>
+          <div class="quote__author">
+            <strong>Rafael Marques</strong>
+            <time datetime="2022-06-08">4 anos atrás</time>
+          </div>
+          <span class="quote__verified">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Verificado
+          </span>
+        </footer>
+      </article>
+    </div>
   </div>
 </section>
 
