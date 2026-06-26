@@ -3,12 +3,31 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Política de Privacidade — Auto Peças Cinco Rodas</title>
+<title>Política de Privacidade · Auto Peças Cinco Rodas</title>
+<meta name="description" content="Política de Privacidade da Auto Peças Cinco Rodas. Saiba como coletamos, usamos, armazenamos e protegemos os seus dados de acordo com a LGPD." />
+<link rel="canonical" href="https://www.autopecascincorodas.ag5agencia.site/politica-de-privacidade.html" />
+<link rel="icon" type="image/x-icon" href="Assets/favicon-cinco-rodas.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="Assets/favicon-cinco-rodas.ico" />
+
+<!-- Preload LCP Logo (Responsivo) -->
+<link rel="preload" href="Assets/logo-mobile-cinco-rodas.webp" as="image" fetchpriority="high" media="(max-width: 767px)" />
+<link rel="preload" href="Assets/logo-desktop-cinco-rodas.webp" as="image" fetchpriority="high" media="(min-width: 768px)" />
+
+<!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+<!-- Google Fonts: async-load com preload (elimina render-blocking) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"></noscript>
+
+<!-- CSS principal: preload + carga síncrona -->
+<link rel="preload" href="style.css" as="style">
 <link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="cookie-banner.css" />
+
+<!-- CSS não crítico: async-load -->
+<link rel="preload" href="cookie-banner.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="cookie-banner.css"></noscript>
 <style>
   .legal-content {
     max-width: 900px;
@@ -63,18 +82,16 @@
 
 <!-- ============== NAV ============== -->
 <header class="nav" id="nav">
-  <a href="index.html#hero" class="nav__brand" aria-label="Auto Peças Cinco Rodas — início">
+  <a href="index.html#hero" class="nav__brand" aria-label="Auto Peças Cinco Rodas, início">
     <picture>
       <source media="(max-width: 767px)" srcset="Assets/logo-mobile-cinco-rodas.webp" />
       <img src="Assets/logo-desktop-cinco-rodas.webp" alt="Logo Auto Peças Cinco Rodas - Auto peças e oficina mecânica em Santa Cruz RJ" class="nav__logo" width="160" height="44" fetchpriority="high" />
     </picture>
   </a>
   <nav class="nav__links" aria-label="Principal">
+    <a href="index.html#pecas">Peças</a>
     <a href="index.html#servicos">Serviços</a>
-    <a href="index.html#videos">Vídeos</a>
-    <a href="index.html#sobre">Sobre</a>
     <a href="index.html#avaliacoes">Avaliações</a>
-    <a href="index.html#faq">FAQ</a>
     <a href="index.html#localizacao">Localização</a>
   </nav>
   <button class="nav__burger" aria-label="Abrir menu" aria-expanded="false">
@@ -86,7 +103,7 @@
 <main class="legal-content">
   <h1>Política de Privacidade</h1>
   <p class="update-date">Última atualização: 28 de maio de 2026</p>
-  <p>Esta Política de Privacidade descreve como a <strong>Auto Peças Cinco Rodas</strong> coleta, usa, armazena e protege as informações dos usuários que visitam e utilizam o nosso site institucional (cincorodas.com.br), em total conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018)</strong>.</p>
+  <p>Esta Política de Privacidade descreve como a <strong>Auto Peças Cinco Rodas</strong> coleta, usa, armazena e protege as informações dos usuários que visitam e utilizam o nosso site institucional (cincorodas.com.br), em total conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD, Lei nº 13.709/2018)</strong>.</p>
 
   <section>
     <h2>1. Informações que Coletamos</h2>
@@ -164,7 +181,7 @@
       <li><strong>Encarregado de Proteção de Dados (DPO)</strong>: Setor de Privacidade AG5</li>
       <li><strong>E-mail</strong>: <a href="mailto:contato@cincorodas.com.br" style="color: var(--gold);">contato@cincorodas.com.br</a></li>
       <li><strong>WhatsApp da Matriz</strong>: (21) 99598-2254</li>
-      <li><strong>Endereço físico</strong>: Av. Antares, 2765 — Santa Cruz, Rio de Janeiro — RJ</li>
+      <li><strong>Endereço físico</strong>: Av. Antares, 2765, Santa Cruz, Rio de Janeiro, RJ</li>
     </ul>
   </section>
 </main>
@@ -174,7 +191,7 @@
   <div class="foot__grid">
     <div class="foot__brand">
       <a href="index.html#hero" class="nav__brand">
-        <img src="Assets/logo-desktop-cinco-rodas.webp" alt="Logo Auto Peças Cinco Rodas - Auto peças e oficina mecânica em Santa Cruz RJ" class="nav__logo" width="160" height="44" loading="lazy" />
+        <img src="Assets/logo-desktop-cinco-rodas.webp" alt="Logo Auto Peças Cinco Rodas - Auto peças e oficina mecânica em Santa Cruz RJ" class="nav__logo foot__logo" width="160" height="44" loading="lazy" />
       </a>
       <p>Peças nacionais e importadas + oficina completa em Santa Cruz. Tradição desde 1975 garantindo o máximo de performance e segurança para você.</p>
       <div class="foot__social">
@@ -193,24 +210,24 @@
     <div>
       <h5>Navegação</h5>
       <ul>
+        <li><a href="index.html#pecas">Peças</a></li>
         <li><a href="index.html#servicos">Serviços</a></li>
         <li><a href="index.html#videos">Vídeos</a></li>
         <li><a href="index.html#sobre">Sobre</a></li>
         <li><a href="index.html#avaliacoes">Avaliações</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
         <li><a href="index.html#localizacao">Localização</a></li>
       </ul>
     </div>
 
     <div>
-      <h5>Serviços</h5>
+      <h5>Peças</h5>
       <ul>
-        <li><a href="index.html#servicos">Suspensão Completa</a></li>
-        <li><a href="index.html#servicos">Freios</a></li>
-        <li><a href="index.html#servicos">Motor &amp; Arrefecimento</a></li>
-        <li><a href="index.html#servicos">Embreagem &amp; Transmissão</a></li>
-        <li><a href="index.html#servicos">Alinhamento &amp; Balanceamento</a></li>
-        <li><a href="index.html#servicos">Diagnóstico &amp; Revisão</a></li>
+        <li><a href="index.html#pecas">Suspensão</a></li>
+        <li><a href="index.html#pecas">Freios</a></li>
+        <li><a href="index.html#pecas">Óleo &amp; Lubrificantes</a></li>
+        <li><a href="index.html#pecas">Filtros</a></li>
+        <li><a href="index.html#pecas">Ignição &amp; Motor</a></li>
+        <li><a href="index.html#pecas">Embreagem &amp; Transmissão</a></li>
       </ul>
     </div>
 
@@ -223,10 +240,10 @@
         </a>
         <a href="https://share.google/ScUP9NqqFxJdaFwdD" target="_blank" rel="noopener noreferrer" class="foot__contact-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          Av. Antares, 2765 — Santa Cruz, RJ
+          Av. Antares, 2765 · Santa Cruz, RJ
         </a>
         <a href="https://wa.me/5521970368167?text=Olá, vim através do site e gostaria de uma informação." target="_blank" rel="noopener noreferrer" class="foot__contact-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.9-1.6A11 11 0 1 0 20.5 3.5Zm-8.4 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 .9.9-2.9-.2-.3a9 9 0 1 1 7.2 3.8Zm5.2-6.7c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.2-.7.1a7.4 7.4 0 0 1-3.6-3.2c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4 0-.1-.3-.2-.6-.3Z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           (21) 97036-8167 (Loja - WhatsApp)
         </a>
         <a href="tel:+5521995982254" class="foot__contact-item">
@@ -273,7 +290,7 @@
 <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
 <div class="drawer" id="drawer" aria-hidden="true">
   <div class="drawer__header">
-    <a href="index.html#hero" class="nav__brand" aria-label="Auto Peças Cinco Rodas — início">
+    <a href="index.html#hero" class="nav__brand" aria-label="Auto Peças Cinco Rodas, início">
       <img src="Assets/logo-mobile-cinco-rodas.webp" alt="Logo Auto Peças Cinco Rodas - Auto peças e oficina mecânica em Santa Cruz RJ" class="nav__logo" width="130" height="44" loading="lazy" />
     </a>
     <button class="drawer__close" id="drawerClose" aria-label="Fechar menu">
@@ -282,17 +299,15 @@
   </div>
   
   <nav class="drawer__links" aria-label="Mobile">
+    <a href="index.html#pecas">Peças</a>
     <a href="index.html#servicos">Serviços</a>
-    <a href="index.html#videos">Vídeos</a>
-    <a href="index.html#sobre">Sobre</a>
     <a href="index.html#avaliacoes">Avaliações</a>
-    <a href="index.html#faq">FAQ</a>
     <a href="index.html#localizacao">Localização</a>
   </nav>
 
   <div class="drawer__footer">
     <a class="btn btn--primary btn--block" href="https://wa.me/5521970368167?text=Ola,%20vim%20atraves%20do%20site%20e%20gostaria%20de%20uma%20informacao." target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.9-1.6A11 11 0 1 0 20.5 3.5Zm-8.4 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 .9.9-2.9-.2-.3a9 9 0 1 1 7.2 3.8Zm5.2-6.7c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1l-1 1.2c-.2.2-.4.2-.7.1a7.4 7.4 0 0 1-3.6-3.2c-.3-.5.3-.4.7-1.4.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4 0-.1-.3-.2-.6-.3Z"/></svg>
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp
     </a>
   </div>
@@ -439,7 +454,7 @@
         <div class="wa-content">
             <div class="wa-header">
                 <div class="wa-avatar-wrapper">
-                    <img src="Assets/favicon-cinco-rodas.ico" alt="Cinco Rodas" class="wa-avatar">
+                    <img src="Assets/avatar-cinco-rodas.webp" alt="Auto Peças Cinco Rodas" class="wa-avatar" width="44" height="44" loading="lazy">
                     <span class="wa-status-dot"></span>
                 </div>
                 <div class="wa-info">
@@ -451,13 +466,13 @@
                 <span></span><span></span><span></span>
             </div>
             <div id="wa-real-message" class="wa-message-text" style="display: none;">
-                <p>Olá! Somos a <strong>Cinco Rodas</strong>. Está ouvindo algum barulho no carro? Nos diga a marca e modelo dele que te ajudamos com o diagnóstico!</p>
+                <p>Olá! 👋 Carro com barulho ou precisando de peça? <strong>Manda a marca e o modelo que a gente te ajuda com o diagnóstico.</strong></p>
             </div>
         </div>
     </div>
     <a href="https://wa.me/5521970368167?text=Olá,%20vim%20através%20do%20site%20e%20gostaria%20de%20falar%20com%20o%20atendimento." class="wa-float-btn" target="_blank" rel="noopener noreferrer" id="wa-main-btn" role="button" aria-label="Falar pelo WhatsApp">
-        <svg viewBox="0 0 16 16" width="30" height="30" fill="currentColor">
-            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         <span class="wa-badge" id="wa-notification">1</span>
     </a>

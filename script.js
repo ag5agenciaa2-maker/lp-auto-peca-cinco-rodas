@@ -1,5 +1,5 @@
 /* ============================================================
-   AUTO PEÇAS CINCO RODAS — interactions
+   AUTO PEÇAS CINCO RODAS - interactions
    ============================================================ */
 
 (function () {
@@ -200,7 +200,7 @@
   const ok   = document.getElementById('ctaSuccess');
   const WHATSAPP_NUMBER = '5521970368167';
 
-  // Máscara de telefone com DDD — formato (XX) XXXXX-XXXX
+  // Máscara de telefone com DDD - formato (XX) XXXXX-XXXX
   const telInput = document.getElementById('telInput');
   if (telInput) {
     telInput.addEventListener('input', (e) => {
@@ -300,7 +300,7 @@
     });
   });
 
-  // ---------- WhatsApp Premium Experience (AG5 V4 — gatilho por viewport) ----------
+  // ---------- WhatsApp Premium Experience (AG5 V4 - gatilho por viewport) ----------
   const initWaPremium = () => {
     // Mecânica/oficina = nicho TRANQUILO (não regulado) → badge habilitado
     const MODO_COMPLIANCE = false;
@@ -311,7 +311,7 @@
     const badge         = document.getElementById('wa-notification');
     const closeBtn      = document.getElementById('wa-close-btn');
     const mainBtn       = document.getElementById('wa-main-btn');
-    const targetSection = document.getElementById('servicos'); // 3ª seção (hero → impacto → serviços)
+    const targetSection = document.getElementById('pecas'); // 3ª seção (hero, impacto, peças)
 
     if (!bubble || !typing || !realMessage || !closeBtn || !mainBtn || !targetSection) return;
 
@@ -690,9 +690,33 @@
   initScrollPlay();
   initHeroWheelsParallax();
 
-  // Placeholder para futuras interações do grid bento
-  const initBentoPremium = () => {};
-  initBentoPremium();
+  // Lightbox de imagem (galeria do Sobre + qualquer [data-zoom])
+  const initImageZoom = () => {
+    const box = document.getElementById('imgZoom');
+    const target = document.getElementById('imgZoomTarget');
+    const closeBtn = document.getElementById('imgZoomClose');
+    if (!box || !target) return;
+
+    const open = (src, alt) => {
+      target.src = src;
+      target.alt = alt || '';
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      box.hidden = true;
+      target.src = '';
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('[data-zoom]').forEach((img) => {
+      img.addEventListener('click', () => open(img.currentSrc || img.src, img.alt));
+    });
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', (e) => { if (e.target === box) close(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !box.hidden) close(); });
+  };
+  initImageZoom();
 
 })();
 
