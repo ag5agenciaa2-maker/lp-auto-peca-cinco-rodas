@@ -2584,13 +2584,14 @@ strong { color: var(--txt); }
   flex-shrink: 0;
 }
 
-/* Footer - menção Sepetiba */
-.loc__footer {
+/* Unidades (Santa Cruz + Sepetiba) */
+.loc__units { margin-top: 48px; }
+.loc__unit-head {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-top: 48px;
+  margin-bottom: 28px;
 }
 .loc__footer-line {
   flex: 1;
@@ -2598,21 +2599,81 @@ strong { color: var(--txt); }
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--line-2), transparent);
 }
-.loc__footer p {
+.loc__unit-head p {
   font-size: 0.85rem;
-  color: var(--mut-2);
+  color: var(--mut);
   margin: 0;
   white-space: nowrap;
+  font-family: var(--ff-mono);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
-.loc__footer p strong {
-  color: var(--mut);
-  font-weight: 600;
+.loc__unit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: var(--container);
+  margin: 0 auto;
 }
-.loc__footer p a {
+.loc__unit {
+  background: linear-gradient(145deg, rgba(16,24,38,0.6) 0%, rgba(10,14,20,0.7) 100%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 26px 28px;
+  transition: border-color 300ms ease, transform 300ms ease;
+}
+.loc__unit:hover {
+  border-color: rgba(255,210,0,0.28);
+  transform: translateY(-3px);
+}
+.loc__unit-tag {
+  display: inline-block;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.loc__unit-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.loc__unit-line svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+.loc__unit-line strong {
+  display: block;
+  color: var(--txt);
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+.loc__unit-line span {
+  display: block;
   color: var(--mut);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+.loc__unit-line a {
+  color: var(--mut);
+  font-size: 0.92rem;
   transition: color 250ms ease;
 }
-.loc__footer p a:hover { color: var(--gold); }
+.loc__unit-line a:hover { color: var(--gold); }
+.loc__unit-btn {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 9px 16px;
+  border: 1px solid rgba(255,210,0,0.3);
+  border-radius: 100px;
+  transition: background 250ms ease, color 250ms ease;
+}
+.loc__unit-btn:hover { background: var(--gold); color: #111; }
 
 /* ============================================================
    CTA FORM
@@ -3653,7 +3714,7 @@ strong { color: var(--txt); }
   .loc__stage:hover .loc__float-inner {
     transform: none;
   }
-  .loc__footer { margin-top: 36px; }
+  .loc__units { margin-top: 36px; }
   .loc__footer-line { max-width: 60px; }
 
   .faq__container { grid-template-columns: 1fr; gap: 48px; }
@@ -3973,13 +4034,12 @@ strong { color: var(--txt); }
   .loc__float-row span,
   .loc__float-row a { font-size: 0.85rem; }
   .loc__float-btn { margin-top: 16px; padding: 12px 18px; font-size: 0.9rem; }
-  .loc__footer {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 24px;
-  }
-  .loc__footer-line { max-width: 60px; }
-  .loc__footer p { white-space: normal; text-align: center; font-size: 0.82rem; }
+  .loc__units { margin-top: 24px; }
+  .loc__unit-head { gap: 10px; margin-bottom: 20px; }
+  .loc__footer-line { max-width: 50px; }
+  .loc__unit-head p { white-space: normal; text-align: center; font-size: 0.78rem; }
+  .loc__unit-grid { grid-template-columns: 1fr; gap: 14px; }
+  .loc__unit { padding: 22px 22px; }
 
   /* Ajuste de espaçamento móvel Oficina em Ação */
   .experience {
