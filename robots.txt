@@ -3,7 +3,7 @@ Allow: /
 Disallow: /politica-de-privacidade.html
 Disallow: /termos-e-condicoes.html
 
-Sitemap: https://www.autopecascincorodas.ag5agencia.site/sitemap.xml
+Sitemap: https://www.cincorodasautopecas.com.br/sitemap.xml
 
 # AI Crawlers (GEO Optimization)
 User-agent: ChatGPT-User
